@@ -5,6 +5,7 @@ import numpy
 import os
 import time
 
+path=str(input('Enter path to the images (Note: Please provide the absolute path): '))
 height = int(input("Enter height of images after processing : "))
 width = int(input("Enter width of images after processing : "))
 png_compression = int(input("Enter Quality factor for .png image -> (0 - 9), 0 means high : "))
@@ -15,7 +16,7 @@ cwd = os.getcwd()
 print("\ncurrent Working Directory : "+cwd)
 
 #To get the path from where images will be read
-raw_image_path = cwd+"//Images"
+raw_image_path = path
 
 #To get list of all images in that directory
 images = os.listdir(raw_image_path)
@@ -24,14 +25,17 @@ raw_image_path = raw_image_path+"//"
 print("\nImages will be read from the path : "+raw_image_path)
 
 #Destination to keep processed images
+if not os.path.exists(os.path.join(cwd,'ResizedImages')):
+	os.mkdir(os.path.join(cwd,'ResizedImages'))
 processed_image_path = cwd+"//ResizedImages//"
 print("\nProcessed Images will be saved to : "+processed_image_path)
 
 print("\nStarting script to process this images : ")
 print(images)
+print('Found ',len(images),' images')
 
 #Loop to iterate over all images
-for img in images : 
+for img in images :
 	print("Processing : "+img)
 	#To read image from file path
 	img_read = cv2.imread(raw_image_path+img)
