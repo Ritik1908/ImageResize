@@ -10,7 +10,6 @@ It uses the following Libraries :-
 -> time
 
 ----------------------------------------------------------------------------------------------------
-#NOTE :- All the images must be in a folder names "Images"
-#NOTE :- An empty folder "ResizedImages" must be created, here all images will be kept after transformation.
+#NOTE :- All transformed images will pe put to new folder "ResizedImages"
 
 ----------------------------------------------------------------------------------------------------
